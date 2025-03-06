@@ -4,8 +4,9 @@ import { useRouter } from "expo-router";
 import { Dropdown } from "react-native-element-dropdown";
 
 
-const CallAPI_textEntry = () => {
+const CallAPI = () => {
 
+    // https://rapidapi.com/
     const url = 'https://numbersapi.p.rapidapi.com/6/21/date';
     const options = {
     	method: 'GET',
@@ -49,7 +50,51 @@ const CallAPI_textEntry = () => {
 
     useEffect(() => {
         if (day && month) {
-            fetchData();
+            if (day == "1" ||
+                day == "01" || 
+                day == "2" || 
+                day == "02" || 
+                day == "3" || 
+                day == "03" || 
+                day == "4" || 
+                day == "04" || 
+                day == "5" || 
+                day == "05" || 
+                day == "6" || 
+                day == "06" || 
+                day == "7" || 
+                day == "07" || 
+                day == "8" || 
+                day == "08" || 
+                day == "9" || 
+                day == "09" || 
+                day == "10" || 
+                day == "11" || 
+                day == "12" || 
+                day == "13" || 
+                day == "14" || 
+                day == "15" || 
+                day == "16" || 
+                day == "17" || 
+                day == "18" || 
+                day == "19" || 
+                day == "20" || 
+                day == "21" || 
+                day == "22" || 
+                day == "23" || 
+                day == "24" || 
+                day == "25" || 
+                day == "26" || 
+                day == "27" || 
+                day == "28" || 
+                day == "29" || 
+                day == "30" || 
+                day == "31"){
+                fetchData();
+            }
+            else {
+                day == "1"
+            }
         }
     }, [day, month])
 
@@ -102,4 +147,4 @@ const styles = StyleSheet.create ({
     }
 })
 
-export default CallAPI_textEntry;
+export default CallAPI;
