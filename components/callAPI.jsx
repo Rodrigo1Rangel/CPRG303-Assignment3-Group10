@@ -100,9 +100,7 @@ const CallAPI = () => {
 
     return (
         <View style={{alignItems:"center", marginTop: 200}}>
-            <View style={styles.textInput}>
-            <TextInput placeholder="Day" value={day} onChangeText={setDay} />
-            </View>
+
             <View style={styles.textInput}>
                 <Dropdown
                    data={months}
@@ -112,12 +110,17 @@ const CallAPI = () => {
                    labelField="label"
                    valueField="value"
                 />
+            </View> 
+
+            <View style={styles.textInput}>
+            <TextInput placeholder="Day" value={day} onChangeText={setDay} />
             </View>
+
             <View style={styles.factContainer}>
-                <Text style={styles.titleInterestingFact}>Interesting fact: </Text>
+                {month == "" ? <></> : <Text style={styles.titleInterestingFact}>Interesting fact: </Text>}
                 <Text style={styles.interestingFact}>{interestingFact}</Text>
-                <Button title = "Index" onPress={() => router.push("/")}/>
             </View>
+            
         </View>
     )
 }
